@@ -9,19 +9,19 @@ module.exports = (app) => {
 
     app.post('/qiwi/webhook', Controllers.QiwiCtrl.webhook)
     app.post('/yandex/webhook', Controllers.YandexCtrl.webhook)
-    app.get('/form', async (req, res) => {
-
-        const loginPage = auth.getAuthForm(['account-info', `payment-p2p`])
-        res.send(loginPage.toString())
-    })
-    app.get('/token', async (req, res) => {
-        const {code} = req.query
-        console.log(req.query)
-        if (!code) return res.send({success: false, error: "Missing code"})
-        const token = await auth.exchangeCode2Token(code)
-
-        res.send({success: true, token})
-    })
+    // app.get('/form', async (req, res) => {
+    //
+    //     const loginPage = auth.getAuthForm(['account-info', `payment-p2p`])
+    //     res.send(loginPage.toString())
+    // })
+    // app.get('/token', async (req, res) => {
+    //     const {code} = req.query
+    //     console.log(req.query)
+    //     if (!code) return res.send({success: false, error: "Missing code"})
+    //     const token = await auth.exchangeCode2Token(code)
+    //
+    //     res.send({success: true, token})
+    // })
     app.get("/payment", async (req, res) => {
 
         const {amount, label} = req.query
