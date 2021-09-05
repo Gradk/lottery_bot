@@ -1,0 +1,24 @@
+{
+  "name": "telegraf",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@qiwi/bill-payments-node-js-sdk": "^3.2.1",
+    "axios": "^0.21.1",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "moment": "^2.29.1",
+    "mongoose": "^5.12.14",
+    "moongoose": "0.0.5",
+    "node-schedule": "^2.0.0",
+    "telegraf": "^3.38.0",
+    "yoomoney-sdk": "^1.1.1"
+  }
+}
