@@ -41,8 +41,8 @@ const chooseWinners = async () => {
                 //добавляем победителя в массив победителей комнаты
                 await Room.findByIdAndUpdate(room._id, {$push: {winners: {id: +winner.id, username: winner.username}}})
             }
-            //await Room.findByIdAndUpdate(room._id, {status: 'Finished'})
-            //await Room.create({created_at: Date.now(), price: room.price, commission: room.commission})
+            await Room.findByIdAndUpdate(room._id, {status: 'Finished'})
+            await Room.create({created_at: Date.now(), price: room.price, commission: room.commission})
             const updatedRoom = await Room.findById(room._id)
             console.log({updatedRoom})
             await Promise.all(
