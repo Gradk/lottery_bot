@@ -47,7 +47,7 @@ class YandexCtrl {
                 })
             }
 
-            await bot.telegram.sendMessage(telegramId, 'Покупка прошла успешно');
+            await bot.telegram.sendMessage(telegramId, 'Покупка прошла успешно, \nРозыгрыш будет проведен завтра в 13:00 (мск)');
 
 
         } else {
