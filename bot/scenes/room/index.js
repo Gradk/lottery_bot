@@ -144,7 +144,7 @@ exactRoom.enter(async (ctx) => {
                     })
                 }
 
-                await send(ctx, `Куплено стикеров: ${count}, \nОстаток на балансе: ${result} руб.`)
+                await send(ctx, `Куплено стикеров: ${count}, \nОстаток на балансе: ${result} руб. \nРозыгрыш будет проведен завтра в 13:00 (мск) `)
 
                 return
 

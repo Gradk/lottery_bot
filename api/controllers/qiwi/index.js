@@ -77,7 +77,7 @@ class QiwiCtrl {
                 })
             }
 
-            await bot.telegram.sendMessage(telegramId, 'Покупка прошла успешно')
+            await bot.telegram.sendMessage(telegramId, `Покупка прошла успешно, \nРозыгрыш будет проведен завтра в 13:00 (мск) `)
             //проверка на реф программу, начисление баллов
             await addBonusReferer(telegramId, sum)
 
