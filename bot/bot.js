@@ -44,7 +44,7 @@ bot.use(async (ctx, next) => {
         const newUser = new User({id, first_name, last_name, username, register_date: date})
         await newUser.save()
     }
-    return next(
+    return next()
 }
 })
 
