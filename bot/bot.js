@@ -28,9 +28,11 @@ scenesInit(stage);
 bot.use(stage.middleware())
 //мидлвеар 
 bot.use(async (ctx, next) => {
-
-    const {id, first_name, last_name, username} = ctx.from
-    const user = await User.findOne({id})
+    if(ctx.from){
+        const {id, first_name, last_name, username} = ctx.from
+        const user = await User.findOne({id})
+    }
+    
 
 
     if (!ctx.from.username) {
