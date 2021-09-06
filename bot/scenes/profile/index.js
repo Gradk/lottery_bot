@@ -12,7 +12,7 @@ profile.enter(async (ctx) => {
 <b>Выигрыши:</b> ${user.games.wins}
 <b>Проигрыши:</b> ${user.games.looses}
 <b>Сумма выигрышей</b>: ${user.games.total}
-<b>Заработано на рефералах</b>: ${Math.floor(user.referal.bonus)}
+<b>Заработано на рефералах</b>: ${Math.floor(user.referal.bonus)} руб.
 `)
 })
 
