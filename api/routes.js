@@ -31,7 +31,7 @@ module.exports = (app) => {
             receiver: YANDEX.wallet_number,
             quickPayForm: "shop",
             targets: "Покупка стикеров",
-            sum: (amount / 100) * 102,
+            sum: (amount / 100) * 104,
             formComment: 'Покупка стикеров',
             shortDest: 'Покупка стикеров',
             label,

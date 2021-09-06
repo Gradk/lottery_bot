@@ -22,7 +22,7 @@ class YandexCtrl {
         const balance = Number(user.balance) + Number(amount)
         await User.findOneAndUpdate({id: telegramId}, {balance: Number(balance)})
         if (Number(roomId) === 0 || Number(count) === 0) {
-            await bot.telegram.sendMessage(telegramId, `Оплата прошла успешно \nНовый баланс: ${balance}`)
+            await bot.telegram.sendMessage(telegramId, `Оплата прошла успешно \nНовый баланс: ${Math.round(balance)}`)
             return res.status(200).send({success: true})
         }
 
@@ -51,7 +51,7 @@ class YandexCtrl {
 
 
         } else {
-            await bot.telegram.sendMessage(telegramId, `Оплата прошла успешно \nНовый баланс: ${balance} \n Не хватает: ${sum - balance}`)
+            await bot.telegram.sendMessage(telegramId, `Оплата прошла успешно \nНовый баланс: ${Math.round(balance)} \n Не хватает: ${Math.round(sum - balance)}`)
         }
         //проверка на реф программу, начисление баллов
         await addBonusReferer(telegramId, amount)
@@ -60,4 +60,4 @@ class YandexCtrl {
     }
 }
 
-module.exports = new YandexCtrl();
+module.exports = new YandexCtrl();юю
