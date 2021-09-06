@@ -11,8 +11,8 @@ app.use(bodyParser.json())
 routes(app)
 
 httpsOptions = {
-    key: fs.readFileSync(__dirname +"/api/private.key"), // путь к ключу
-    cert: fs.readFileSync(__dirname +"/api/public.key") // путь к сертификату
+    key: fs.readFileSync(__dirname +"/private.key"), // путь к ключу
+    cert: fs.readFileSync(__dirname +"/public.key") // путь к сертификату
 }
 
 
