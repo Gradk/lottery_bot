@@ -60,4 +60,4 @@ class YandexCtrl {
     }
 }
 
-module.exports = new YandexCtrl();юю
+module.exports = new YandexCtrl();
