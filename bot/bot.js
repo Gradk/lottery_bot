@@ -31,8 +31,8 @@ bot.use(async (ctx, next) => {
     if(ctx.from){
         const {id, first_name, last_name, username} = ctx.from
         const user = await User.findOne({id})
-    }
     
+
 
 
     if (!ctx.from.username) {
@@ -44,7 +44,8 @@ bot.use(async (ctx, next) => {
         const newUser = new User({id, first_name, last_name, username, register_date: date})
         await newUser.save()
     }
-    return next()
+    return next(
+}
 })
 
 bot.command('/help', (ctx) => {
