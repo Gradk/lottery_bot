@@ -29,7 +29,7 @@ balance.enter(async (ctx) => {
         }
     }
     await ctx.replyWithHTML(`${user.first_name}
-<b>Ваш баланс:</b> ${user.balance} руб.
+<b>Ваш баланс:</b> ${Math.round(user.balance)} руб.
 `, extra)
 
 })
