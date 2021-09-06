@@ -8,7 +8,7 @@ profile.enter(async (ctx) => {
     const user = await User.findOne({id: ctx.from.id});
     ctx.replyWithHTML(`<b>Вас зовут:</b> ${user.first_name}
 <b>Куплено стикеров:</b> ${user.buyed_tickets}
-<b>Баланс:</b> ${Math.floor(user.balance)}
+<b>Баланс:</b> ${Math.round(user.balance)}
 <b>Выигрыши:</b> ${user.games.wins}
 <b>Проигрыши:</b> ${user.games.looses}
 <b>Сумма выигрышей</b>: ${user.games.total}
