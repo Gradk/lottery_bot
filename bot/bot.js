@@ -31,7 +31,7 @@ bot.use(async (ctx, next) => {
     if(ctx.from){
         const {id, first_name, last_name, username} = ctx.from
         const user = await User.findOne({id})
-    
+
 
 
 
@@ -43,9 +43,9 @@ bot.use(async (ctx, next) => {
         let date = moment().format('DD.MM.YYYY')
         const newUser = new User({id, first_name, last_name, username, register_date: date})
         await newUser.save()
-    }
+    }}
     return next()
-}
+
 })
 
 bot.command('/help', (ctx) => {
