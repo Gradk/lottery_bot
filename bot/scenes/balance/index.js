@@ -132,8 +132,25 @@ requestAmount.on('message', async ctx => {
 
 //депозит сцена
 deposit.enter(async ctx => {
-    await send(ctx, 'Введите сумму пополнения:')
+    await send(ctx, 'Введите сумму пополнения:', {
+        reply_markup: {
+            inline_keyboard: [
+                [{
+                    text: '<< отмена',
+                    callback_data: `reset`
+                }
+                ],
+            ]
+        }
+    })
 })
+
+deposit.action('reset', async ctx => {
+    await ctx.deleteMessage()
+    await ctx.scene.leave()
+})
+
+
 deposit.on('message', async ctx => {
     const {text} = ctx.message
     console.log(typeof (text))
