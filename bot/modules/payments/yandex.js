@@ -27,7 +27,7 @@ async function sendPayment(wallet, amount) {
             message: response.status === 'success' ? 'Платёж успешно отправлен' : `Попробуйте еще раз\nКод операции: ${response.status}`
         }
     } catch (e) {
-        return {success: false, message: 'Ошибка при отправке платежа'}
+        return {success: false, message: 'Ошибка при отправке платежа, возможно у вас анонимный кошелек, идентифицируйте его. Или напишите в поддержку @gradk'}
     }
 }
 
