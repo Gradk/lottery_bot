@@ -14,7 +14,7 @@ const exactRoom = new Scene('exactRoom')
 
 
 room.enter(async (ctx) => {
-    const rooms = await Room.find()
+    const rooms = await Room.find({status: 'WAITING'})
     const keyboard = [
         []
     ]
