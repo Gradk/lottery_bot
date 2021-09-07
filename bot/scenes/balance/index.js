@@ -49,7 +49,22 @@ balance.action(/withdraw/, async ctx => {
 })
 
 requestWallet.enter(async ctx => {
-    await send(ctx, 'Введите номер кошелька Яндекс деньги')
+    await send(ctx, 'Введите номер кошелька Яндекс деньги', {
+        reply_markup: {
+            inline_keyboard: [
+                [{
+                    text: '<< отмена',
+                    callback_data: `reset`
+                }
+                ],
+            ]
+        }
+    })
+})
+
+requestWallet.action('reset', async ctx => {
+    await ctx.deleteMessage()
+    await ctx.scene.leave()
 })
 
 requestWallet.on('message', async ctx => {
