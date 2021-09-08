@@ -12,7 +12,7 @@ async function sendPayment(wallet, amount) {
             pattern_id: "p2p",
             to: wallet
         });
-        console.log(request)
+        console.log({request})
 
         // Где-то тут можно сохранить ID платежа в ДБ и оставить на потом
 
