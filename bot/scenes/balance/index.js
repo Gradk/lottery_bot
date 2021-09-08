@@ -117,6 +117,9 @@ requestAmount.on('message', async ctx => {
     const {number} = ctx.scene.state;
     const amount = ctx.message.text;
     const user = await User.findOne({id: ctx.from.id});
+    console.log(user)
+    console.log(number)
+
     if (isNaN(amount) || amount > user.balance) return await send(ctx, 'Введите корректную сумму вывода, возможно она превышает баланс')
 
     const api = new YMApi(YANDEX.token)
