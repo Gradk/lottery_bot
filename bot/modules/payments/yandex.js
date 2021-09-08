@@ -5,10 +5,10 @@ const {YANDEX} = require("../../../configs/default");
 async function sendPayment(wallet, amount) {
     try {
         const api = new YMApi(YANDEX.token)
-        console.log(api)
+
         // Запрашиваем платёж
         const request = await api.requestPayment({
-            amount: +amount,
+            amount: amount,
             pattern_id: "p2p",
             to: wallet
         });
