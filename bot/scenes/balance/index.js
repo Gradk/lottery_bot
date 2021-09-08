@@ -109,7 +109,7 @@ checkWallet.action('number_decline', async ctx => {
 
 requestAmount.enter(async ctx => {
     const user = await User.findOne({id: ctx.from.id});
-    await send(ctx, `Ваш баланс: ${user.balance} руб.
+    await send(ctx, `Ваш баланс: ${Math.round(user.balance)} руб.
 Введите сумму для вывода`)
 })
 
