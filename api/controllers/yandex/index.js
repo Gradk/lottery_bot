@@ -9,8 +9,8 @@ class YandexCtrl {
         const {label, amount, codepro, unaccepted} = req.body
         const {0: telegramId, 1: roomId, 2: sum, 3: count, 4: billId} = label.split(';')
         const payment = await Payment.findOne({payment_id: billId})
-        //if (payment.status === 'SUCCESS' || codepro == 'true' || unaccepted == 'true') {
-        if (codepro == 'true' || unaccepted == 'true') {
+        if (payment.status === 'SUCCESS' || codepro == 'true' || unaccepted == 'true') {
+        //if (codepro == 'true' || unaccepted == 'true') {
             if (codepro == 'true') await bot.telegram.sendMessage(telegramId, 'Перевод защищен кодом протекции')
             if (unaccepted == 'true') await bot.telegram.sendMessage(telegramId, 'Перевод заморожен, так как на счете получателя достигнут лимит доступного остатка. ')
             return res.status(200).send({success: true})
