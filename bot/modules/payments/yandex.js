@@ -5,8 +5,7 @@ const {YANDEX} = require("../../../configs/default");
 async function sendPayment(wallet, amount) {
     try {
         const api = new YMApi(YANDEX.token)
-        console.log({request})
-        console.log(response)
+        console.log(api)
         // Запрашиваем платёж
         const request = await api.requestPayment({
             amount: +amount,
