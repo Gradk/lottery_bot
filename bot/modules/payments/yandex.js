@@ -8,7 +8,7 @@ async function sendPayment(wallet, amount) {
 
         // Запрашиваем платёж
         const request = await api.requestPayment({
-            amount: amount,
+            amount: +amount,
             pattern_id: "p2p",
             to: wallet
         });
