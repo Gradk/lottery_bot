@@ -123,7 +123,7 @@ requestAmount.on('message', async ctx => {
     //console.log(amount)
     const api = new YMApi(YANDEX.token)
     const {balance} = await api.accountInfo()
-    
+
     if (balance < amount) return await send(ctx, 'Технические неполадки, попробуйте позже')
 
     const {message, success} = await sendPayment(number, amount)
