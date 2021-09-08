@@ -5,14 +5,14 @@ const {YANDEX} = require("../../../configs/default");
 async function sendPayment(wallet, amount) {
     try {
         const api = new YMApi(YANDEX.token)
-
+        console.log(api)
         // Запрашиваем платёж
         const request = await api.requestPayment({
             amount: +amount,
             pattern_id: "p2p",
             to: wallet
         });
-
+        console.log(request)
 
         // Где-то тут можно сохранить ID платежа в ДБ и оставить на потом
 

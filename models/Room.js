@@ -42,7 +42,7 @@ const RoomSchema = new Schema({
   },
   win_seats: {
       type: Number,
-      default: 4
+      default: 3
   },
   commission: {
       type: Number,

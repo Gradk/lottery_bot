@@ -50,7 +50,7 @@ const chooseWinners = async () => {
                     await bot.telegram.sendMessage(participant.id, `
 🎉 Розыгрыш прошел успешно!
 
-🥇 Победители: ${updatedRoom.winners.map(item => `\n     🥇 ${item.username.slice(0, -2)}**`)}
+🏆 Победители: ${updatedRoom.winners.map(item => `\n     🥇 ${item.username.slice(0, -2)}**`)}
 
 💰 Сумма выигыша каждого: ${reward} руб.
 👛 Вывести средства можно на вкладке баланс`)
