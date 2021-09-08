@@ -117,14 +117,13 @@ requestAmount.on('message', async ctx => {
     const {number} = ctx.scene.state;
     const amount = ctx.message.text;
     const user = await User.findOne({id: ctx.from.id});
-    console.log(user)
-    console.log(number)
+
 
     if (isNaN(amount) || amount > user.balance) return await send(ctx, 'Введите корректную сумму вывода, возможно она превышает баланс')
-    console.log(amount)
+    //console.log(amount)
     const api = new YMApi(YANDEX.token)
     const {balance} = await api.accountInfo()
-    console.log(balance + 'баланс')
+    
     if (balance < amount) return await send(ctx, 'Технические неполадки, попробуйте позже')
 
     const {message, success} = await sendPayment(number, amount)
