@@ -5,7 +5,7 @@ const {YANDEX} = require("../../../configs/default");
 async function sendPayment(wallet, amount) {
     try {
         const api = new YMApi(YANDEX.token)
-        console.log(api)
+
         // Запрашиваем платёж
         const request = await api.requestPayment({
             amount: +amount,
@@ -27,7 +27,7 @@ async function sendPayment(wallet, amount) {
             message: response.status === 'success' ? 'Платёж успешно отправлен' : `Попробуйте еще раз\nКод операции: ${response.status}`
         }
     } catch (e) {
-        return {success: false, message: 'Ошибка при отправке платежа, возможно у вас анонимный кошелек, идентифицируйте его. Или напишите в поддержку @gradk'}
+        return {success: false, message: 'Ошибка при отправке платежа, возможно у вас анонимный кошелек, идентифицируйте его. Напишите в поддержку @gradk сделаем вывод вручную'}
     }
 }
 
